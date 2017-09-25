@@ -1,0 +1,11 @@
+include ../partials/head
+
+.container.login-container 
+  h1 Login
+  form.login-form(method='POST' action='/sign-in')
+    input.form-control(name='email' type='text' placeholder='email' )
+    input.form-control(name='password' type='password' placeholder='password')
+    input.btn(type='submit')
+    h6 #{error}
+
+include ../partials/footer

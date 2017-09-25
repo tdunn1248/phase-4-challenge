@@ -1,46 +1,25 @@
-const path = require('path')
 const express = require('express')
-const bodyParser = require('body-parser')
-const db = require('./db')
-
-const port = process.env.PORT || 3000
-
 const app = express()
+const path = require('path');
+const routes = require('./server/routes')
+const bodyParser = require('body-parser')
+const cookieSession = require('cookie-session')
+const {errorHandler} = require('./server/routes/route_helpers/error-handler')
 
-require('ejs')
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
+app.set('views', __dirname + '/views')
 
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('src/public'))
 
-app.get('/', (req, res) => {
-  db.getAlbums((error, albums) => {
-    if (error) {
-      res.status(500).render('error', {error})
-    } else {
-      res.render('index', {albums})
-    }
-  })
-})
+app.use(cookieSession({
+  name: 'cookie-session',
+  keys: ['key1', 'key2'],
+  maxAge: 50000000
+}))
 
-app.get('/albums/:albumID', (req, res) => {
-  const albumID = req.params.albumID
+app.use(routes)
+app.use(errorHandler)
 
-  db.getAlbumsByID(albumID, (error, albums) => {
-    if (error) {
-      res.status(500).render('error', {error})
-    } else {
-      const album = albums[0]
-      res.render('album', {album})
-    }
-  })
-})
-
-app.use((req, res) => {
-  res.status(404).render('not_found')
-})
-
-app.listen(port, () => {
-  console.log(`Listening on http://localhost:${port}...`)
-})
+const port = process.env.PORT || 3012
+app.listen(port, () => console.log(`Server runnin on ${port}`))

@@ -5,10 +5,6 @@ router.get('/', (request, response, next) => {
   response.status(200).render('index')
 })
 
-const users = require('./users')
-router.use('/', users)
-
-
-
+router.use('/', require('./domains/users'))
 
 module.exports = router

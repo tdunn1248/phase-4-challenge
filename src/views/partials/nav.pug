@@ -1,0 +1,15 @@
+header 
+  a(href='/')
+    h1 Vinyl
+  nav
+    ul
+      if (view)
+        if (view.id)
+          a(href="/users/" + view.id) Profile
+          a(href="/sign-out") Sign Out
+        else
+          a(href="/sign-in") Sign In
+          a(href="/sign-up") Sign Up
+      else 
+        a(href="/sign-in") Sign In
+        a(href="/sign-up") Sign Up

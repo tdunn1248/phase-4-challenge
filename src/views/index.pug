@@ -5,13 +5,27 @@ include ./partials/head
   .container.index-album-reviews-contain
     .index-album-contain
       h1 Records
-      if albums 
-        each album in albums 
+      if view 
+        each album in view.albums
           a(href='albums/' + album.id)
             p= album.title
           p by: #{album.artist}
     .index-recent-reviews-contain
       h1 Recent Reviews
+      if (view)
+        each review in view.reviews 
+          .single-review
+            .title-and-time
+              a(href='/albums/' + review.id)
+                p.index-review-title= review.title
+              p.index-review-date= review.dateposted.toDateString()
+            p.index-review-content= review.content
+            a(href='/users/' + review.review_user_id)
+              p.index-review-name by: #{review.name}
+      else 
+        h2 Sorry, no recent posts yet...
+        h4 Click on a title to submit a review
+
 
 
 include ./partials/footer

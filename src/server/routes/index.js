@@ -1,9 +1,11 @@
 const router = require('express').Router()
-const Album = require('../../models/albums')
+const {indexView} = require('./route_helpers/view')
+const {AlbumsAndNewestReviews} = require('./route_helpers/albums-&-reviews')
 
 router.get('/', (request, response, next) => {
-  Album.readAll().then(albums => {
-    response.status(200).render('index', {albums})
+    AlbumsAndNewestReviews()
+    .then(albumsAndReviews => {
+    response.status(200).render('index', {view: indexView(request, albumsAndReviews)})
   })
 })
 

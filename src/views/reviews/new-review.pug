@@ -2,9 +2,9 @@ include ../partials/head
 
 .container
   .new-post-container  
-    h3 New review for: #{view.title}
-    form(method='POST' action='/reviews/' + view.id)
-      textarea.form-control(name='newReview' placeholder='What do you think of ' + view.title + '?' )
+    h3 New review for: #{view.albumTitle}
+    form(method='POST' action='/reviews/' + view.albumID)
+      textarea.form-control(name='newReview' placeholder='What do you think of ' + view.albumTitle + '?' )
       button.btn.btn-success Submit
     h5 #{error}
       

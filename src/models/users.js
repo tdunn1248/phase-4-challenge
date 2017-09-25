@@ -26,6 +26,5 @@ const signin = (requestBody) => GetUserPassword(requestBody.email).then(user => 
 
 module.exports = {
   signup,
-  signin,
-  getInfo: dbUsers.readUserInfo
+  signin
 }

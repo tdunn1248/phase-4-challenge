@@ -5,7 +5,6 @@ module.exports = {
   errorHandler: (error, request, response, next) => {
     switch (error.message) {
       case ('Incorrect Password') :
-        console.log('okay then')
         response.render('users/login', {error: error.message})
         break
       case ('Email already in use') :

@@ -4,7 +4,6 @@ const Review = require('../../../models/reviews')
 const {newReviewView} = require('../route_helpers/view')
 const {validateReviewForm} = require('../route_helpers/validation')
 
-
 router.get('/:id/reviews/new', (request, response) => {
   Album.readById(request.params.id)
   .then(albumInfo => {

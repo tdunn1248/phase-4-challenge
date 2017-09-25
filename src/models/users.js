@@ -6,7 +6,7 @@ const HashPassword = (password) => bcrypt.hash(password, 10)
 const DBcreate =  (name, email, hashedPassword) => dbUsers.create(name, email, hashedPassword)
 
 const signup = (requestBody) => HashPassword(requestBody.password).then(hash => {
-  DBcreate(requestBody.name, requestBody.email, hash)
+  return DBcreate(requestBody.name, requestBody.email, hash)
 })
 
 // sign in

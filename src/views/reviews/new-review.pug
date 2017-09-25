@@ -1,0 +1,11 @@
+include ../partials/head
+
+.container
+  .new-post-container  
+    h3 New review for: #{view.title}
+    form(method='POST' action='/reviews/' + view.id)
+      textarea.form-control(name='newReview' placeholder='What do you think of ' + view.title + '?' )
+      button.btn.btn-success Submit
+    h5 #{error}
+      
+include ../partials/footer

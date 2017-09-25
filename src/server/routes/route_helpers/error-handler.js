@@ -1,4 +1,5 @@
 const User = require('../../../models/users')
+const Album = require('../../../models/albums')
 
 module.exports = {
   errorHandler: (error, request, response, next) => {
@@ -31,6 +32,15 @@ module.exports = {
       case ('Please enter your password') :
         response.render('users/login', {error: error.message})
         break
+      case ('Review must have content') :
+        Album.readById(parseInt(request.path.slice(9)))
+        .then(albumInfo => {
+          response.status(200).render('reviews/new-review', {
+            view: albumInfo[0],
+            error: error.message
+          })
+        })
+    break
       default :
         console.log('Error::', error.stack)
         response.render('not_found.pug', {error: error.message})

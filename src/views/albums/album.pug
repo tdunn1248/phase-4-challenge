@@ -1,0 +1,16 @@
+include ../partials/head
+
+.container
+  .album-title-contain 
+    h1 #{view.title}
+  .add-review-contain 
+    p(id='error') 
+    h2 Reviews 
+    a(href='/reviews/' + view.id + '/reviews/new')
+      button.btn.btn-success Add New Review
+  .review-container 
+
+script(src='/script.js')
+      
+
+include ../partials/footer

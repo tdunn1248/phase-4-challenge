@@ -5,7 +5,11 @@ include ./partials/head
   .container.index-album-reviews-contain
     .index-album-contain
       h1 Records
-
+      if albums 
+        each album in albums 
+          a(href='albums/' + album.id)
+            p= album.title
+          p by: #{album.artist}
     .index-recent-reviews-contain
       h1 Recent Reviews
 

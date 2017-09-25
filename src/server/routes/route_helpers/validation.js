@@ -7,7 +7,7 @@ module.exports = {
   },
   validateSigninForm: (request, response, next) => {
     if (request.body.email == '') next(new Error('Please enter an email'))
-    if (request.body.password == '') next(new Error('Please enter password'))
+    if (request.body.password == '') next(new Error('Please enter your password'))
     next()
   }
 }

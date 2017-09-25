@@ -5,7 +5,9 @@ const bcrypt = require('bcrypt')
 const HashPassword = (password) => bcrypt.hash(password, 10)
 const DBcreate =  (name, email, hashedPassword) => dbUsers.create(name, email, hashedPassword)
 
-const signup = (requestBody) => HashPassword(requestBody.password).then(hash => DBcreate(requestBody.name, requestBody.email, hash))
+const signup = (requestBody) => HashPassword(requestBody.password).then(hash => {
+  DBcreate(requestBody.name, requestBody.email, hash)
+})
 
 // sign in
 const compare = (password, hashedPassword, user) => bcrypt.compare(password, hashedPassword, user)

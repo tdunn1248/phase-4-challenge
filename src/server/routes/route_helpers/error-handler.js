@@ -1,6 +1,5 @@
 const User = require('../../../models/users')
 
-
 module.exports = {
   errorHandler: (error, request, response, next) => {
     switch (error.message) {
@@ -19,14 +18,18 @@ module.exports = {
       case ('Please enter a name') :
         response.render('users/sign-up', {error: error.message})
         break
+      case ('Please enter an email') :
+        console.log('her?');
+        response.render('users/login', {error: error.message})
+        break
       case ('Please enter a valid email') :
         response.render('users/sign-up', {error: error.message})
         break
       case ('Please enter a password') :
         response.render('users/sign-up', {error: error.message})
         break
-      case ('Please enter password') :
-        response.render('users/sign-in', {error: error.message})
+      case ('Please enter your password') :
+        response.render('users/login', {error: error.message})
         break
       default :
         console.log('Error::', error.stack)

@@ -15,9 +15,9 @@ const GetUserPassword = (email) => dbUsers.readUserInfo(email)
 const ComparePasswords = (password, hashedPassword, user) => compare(password, hashedPassword, user)
 
 const signin = (requestBody) => GetUserPassword(requestBody.email).then(user => {
-  return ComparePasswords(requestBody.password, user.password).then(res => {
+  return ComparePasswords(requestBody.password, user.password).then(isValid => {
     let userInfo = {
-      valid: res,
+      valid: isValid,
       info: user
     }
     return userInfo

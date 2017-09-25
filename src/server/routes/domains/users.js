@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const User = require('../../models/users')
-const {assignUserSession, assignNewUserSession} = require('./route_helpers/session')
-const {validateSignupForm, validateLoginForm} = require('./route_helpers/validation')
+const User = require('../../../models/users')
+const {assignUserSession, assignNewUserSession} = require('../route_helpers/session')
+const {validateSignupForm, validateSigninForm} = require('../route_helpers/validation')
 
 router.route('/sign-up')
       .get((request, response) => {response.status(200).render('users/sign-up')})
@@ -16,7 +16,7 @@ router.route('/sign-up')
 
 router.route('/sign-in')
       .get((request, response) => {response.status(200).render('users/login')})
-      .post(validateLoginForm, (request, response, next) => {
+      .post(validateSigninForm, (request, response, next) => {
         User.signin(request.body).then(user => {
           if(!user.valid) return next(new Error('Incorrect Password'))
           assignUserSession(request, user)

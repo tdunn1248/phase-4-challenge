@@ -5,7 +5,7 @@ module.exports = {
     if (request.body.password == '') next(new Error('Please enter a password'))
     next()
   },
-  validateLoginForm: (request, response, next) => {
+  validateSigninForm: (request, response, next) => {
     if (request.body.email == '') next(new Error('Please enter an email'))
     if (request.body.password == '') next(new Error('Please enter password'))
     next()

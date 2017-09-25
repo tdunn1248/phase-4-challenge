@@ -2,6 +2,7 @@ const router = require('express').Router()
 const Album = require('../../../models/albums')
 const Review = require('../../../models/reviews')
 const {newReviewView} = require('../route_helpers/view')
+const {validateReviewForm} = require('../route_helpers/validation')
 
 
 router.get('/:id/reviews/new', (request, response) => {
@@ -13,8 +14,7 @@ router.get('/:id/reviews/new', (request, response) => {
   })
 })
 
-router.post('/:id', (request, response, next) => {
-  if (request.body.newReview === '') return next(new Error('Review must have content'))
+router.post('/:id', validateReviewForm, (request, response, next) => {
   Review.create(
     request.body.newReview,
     request.session.id,

@@ -9,5 +9,10 @@ module.exports = {
     if (request.body.email == '') next(new Error('Please enter an email'))
     if (request.body.password == '') next(new Error('Please enter your password'))
     next()
+  },
+  validateReviewForm: (request, response, next) => {
+    if (request.body.newReview === '') {
+      return next(new Error('Review must have content'))
+    }
   }
 }

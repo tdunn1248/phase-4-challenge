@@ -1,6 +1,6 @@
 console.log('hello from the browser JavaScript')
 
-const handleResponse = (response, event) => {
+const handleEvent = ( event) => {
   event.target.parentNode.parentNode.remove()
 }
 
@@ -9,7 +9,7 @@ const deleteReview = (event) => {
   if (confirmed) {
     const reviewId = parseInt(event.target.attributes.value.nodeValue)
     fetch(`/reviews/${reviewId}`, {method: 'delete', credentials: 'include'})
-    .then(response => handleResponse(response, event))
+    .then(response => handleEvent(event))
     .catch(error => console.log('Error in fetching::', error.stack))
   }
 }

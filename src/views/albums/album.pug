@@ -18,7 +18,7 @@ include ../partials/head
             p.album-review-name By: #{review.name} 
           if (view.id == review.review_user_id)
             .delete-button-contain
-              button(id=view.userId value=review.id class='delete-review glyphicon glyphicon-trash')
+              button(value=review.id class='delete-review glyphicon glyphicon-trash')
           else 
             span
 script(src='/script.js')

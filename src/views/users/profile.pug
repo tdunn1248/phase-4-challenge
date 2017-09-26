@@ -12,6 +12,7 @@ include ../partials/head
   if (view.reviews) 
     h3 Reviews 
     .profile-reviews-contain
+    if (view.reviews.length > 0)
       each review in view.reviews 
         .profile-review-container
           .title-and-time
@@ -24,6 +25,9 @@ include ../partials/head
               button(value=review.id class='delete-review glyphicon glyphicon-trash')
           else 
             span
+    else 
+      h4 No recent posts yet...
+      h5 Discover albums on the home page
 script(src='/script.js')
 
 include ../partials/footer

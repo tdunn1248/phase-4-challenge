@@ -28,11 +28,13 @@ module.exports = {
     return reviewView
   },
   albumView: (request, albumInfo) => {
+    console.log('heree', albumInfo[0]);
     const albumView = {
       name: request.session.name,
       id: request.session.id,
-      albumTitle: albumInfo[0].title,
-      albumID: albumInfo[0].id
+      albumTitle: albumInfo[0][0].title,
+      albumID: albumInfo[0][0].id,
+      reviews: albumInfo[1]
     }
     return albumView
   }

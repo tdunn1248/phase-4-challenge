@@ -19,8 +19,11 @@ include ../partials/head
               p.index-review-title= review.title
             p.index-review-date= review.dateposted.toDateString()
           p.index-review-content= review.content
-          .delete-button-contain
-            button(id=view.userId value=review.id class='delete-review glyphicon glyphicon-trash')
+          if (view.id == review.review_user_id)
+            .delete-button-contain
+              button(id=view.userId value=review.id class='delete-review glyphicon glyphicon-trash')
+          else 
+            span
 script(src='/script.js')
 
 include ../partials/footer

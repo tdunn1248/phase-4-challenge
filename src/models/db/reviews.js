@@ -34,7 +34,8 @@ const readReviewsById = (id) => {
     SELECT
       review.id, review.content,
       review.dateposted, album.title,
-      review.review_album_id
+      review.review_album_id,
+      review.review_user_id
     FROM review
     JOIN album
     ON review_album_id = album.id

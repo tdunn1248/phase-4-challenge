@@ -3,3 +3,306 @@ html, body {
   padding: 0;
   width: 100vw;
 }
+
+body {
+  background-color: #e9e9e9;
+}
+
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*margin-bottom: 1em;*/
+}
+
+header h1 {
+  color: white;
+  margin-left: 2em;
+}
+
+h6 {
+  margin-left: 2em;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+header nav ul   {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.title-and-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-review-title {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.index-review-content {
+  text-align: left;
+  padding-left: 1.5em;
+}
+
+.index-review-name {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.index-review-date {
+  padding-right: .5em;
+}
+.form-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container form input {
+  max-width: 300px;
+}
+
+.form-container form button {
+  margin-left: 1em;
+}
+
+.btn {
+  min-height: 20px;
+}
+
+.delete-review {
+  background-color: rgba(0, 0, 0, 0.0);
+  border: 0;
+}
+
+
+.delete-button-contain {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.album-review-content {
+  text-align: left;
+  padding-left: 1em;
+}
+
+
+header nav ul a {
+  color: white;
+}
+
+header nav ul a:hover {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+header nav ul a:first-child {
+  margin-right: 1em;
+}
+
+.profile-info-contain {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.profile-img-contain {
+  background-color: #000;
+  flex: 1;
+}
+
+.profile-info {
+  flex: 2.5;
+  margin-left: 1em;
+}
+
+.profile-reviews-contain {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-review-container {
+  display: flex;
+  min-width: 500px;
+  max-width: 500px;
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  flex-direction: column;
+}
+
+.profile-review-title {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.album-review-date {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.album-review-name {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid #000;*/
+  margin-bottom: 1em;
+}
+
+.add-review-contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-review-contain h2 {
+  margin-left: 2em;
+}
+
+.add-review-contain a {
+  margin-right: 2em;
+}
+
+.album-single-review {
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  /*padding: 1em;*/
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.new-new {
+  display: flex;
+  flex: 1;
+}
+
+.album-title-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  background-color: #000;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+.stock-album-background {
+  display: flex;
+  height: 30%;
+  width: 100%;
+  background-color: aqua;
+}
+
+.container {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  flex: 1;
+  height: 80%;
+  flex-direction: column;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 80%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 1em;
+}
+
+.index-album-reviews-contain {
+  flex-direction: row;
+}
+
+.index-album-contain {
+  flex: 1;
+}
+
+.index-album-contain  {
+  text-align: center;
+}
+
+.index-recent-reviews-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.new-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.new-post-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post-container textarea {
+  min-height: 250px;
+  max-height: 250px;
+  min-width: 350px;
+  max-width: 350px;
+  margin-bottom: 1em;
+}
+
+.new-post-container button {
+  max-width: 200px;
+  margin-left: auto;
+}
+
+.index-recent-reviews-contain  {
+  text-align: center;
+}
+
+.single-review {
+  border: 1px solid #000;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  min-width: 350px;
+  max-width: 350px;
+
+}
+
+footer {
+  background-color: #000;
+  width: 100%;
+  height: 10vh;
+  margin-top: 1em;
+}

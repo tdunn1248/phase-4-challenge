@@ -9,7 +9,7 @@ router.post('/:id', validateReviewForm, (request, response) => {
 
 router.delete('/:id', (request,response) => {
   Review.deleteRecord(request.params.id)
-  .then(() => {response.status(302).redirect(request.path)})
+  .then(() => {response.redirect(request.path)})
 })
 
 module.exports = router

@@ -29,6 +29,7 @@ const readAlbumReviewsById = (id) => {
     JOIN member
     ON review_user_id = member.id
     WHERE review.review_album_id = $1
+    ORDER BY review.dateposted desc
   `
   return db.any(query, [id])
 }

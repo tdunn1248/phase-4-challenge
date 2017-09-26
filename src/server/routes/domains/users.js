@@ -1,7 +1,9 @@
 const router = require('express').Router()
 const User = require('../../../models/users')
+const {UserReviews} = require('../../../models/reviews')
 const {assignUserSession, assignNewUserSession} = require('../route_helpers/session')
 const {validateSignupForm, validateSigninForm} = require('../route_helpers/validation')
+const {profileView} = require('../route_helpers/view')
 
 router.route('/sign-up')
       .get((request, response) => {response.status(200).render('users/sign-up')})
@@ -31,7 +33,9 @@ router.get('/sign-out', (request, response) => {
 })
 
 router.get('/users/:id', (request, response, next) => {
-  response.status(200).render('users/profile', {username: request.session.name})
+  UserReviews(request).then(userReviews => {
+    response.status(200).render('users/profile', {view: profileView(request, userReviews)})
+  })
 })
 
 module.exports = router

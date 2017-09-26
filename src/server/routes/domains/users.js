@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const User = require('../../../models/users')
 const {UserReviews} = require('../../../models/reviews')
-const {assignUserSession, assignNewUserSession} = require('../route_helpers/session')
+const {assignUserSession, assignNewUserSession} = require('../route_helpers/session/session')
 const {validateSignupForm, validateSigninForm} = require('../route_helpers/validation')
 const {profileView} = require('../route_helpers/view')
 

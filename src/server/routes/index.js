@@ -3,10 +3,10 @@ const {indexView} = require('./route_helpers/view')
 const {AlbumsAndNewestReviews} = require('./route_helpers/album-review-helpers')
 
 router.get('/', (request, response, next) => {
-    AlbumsAndNewestReviews()
-    .then(albumsAndReviews => {
-      response.status(200).render('index', {view: indexView(request, albumsAndReviews)})
-    })
+  AlbumsAndNewestReviews()
+  .then(albumsAndReviews => {
+    response.status(200).render('index', {view: indexView(request, albumsAndReviews)})
+  })
 })
 
 router.use('/', require('./domains/users'))

@@ -11,4 +11,9 @@ router.post('/:id', validateReviewForm, (request, response) => {
   .then(() => {response.redirect('/albums/' + request.params.id)})
 })
 
+router.delete('/:id', (request,response) => {
+  Review.deleteRecord(request.params.id)
+  .then(() => {response.status(302).redirect(request.path)})
+})
+
 module.exports = router

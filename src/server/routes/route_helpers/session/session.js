@@ -1,6 +1,5 @@
 module.exports = {
   assignUserSession: (request, user) => {
-    console.log('assigning',user.info.id);
     request.session.id = user.info.id
     request.session.name = user.info.name
     request.session.email = user.info.email

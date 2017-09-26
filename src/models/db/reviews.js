@@ -47,8 +47,17 @@ const readReviewsById = (id) => {
   return db.any(query, [id])
 }
 
+const deleteRecord = (id) => {
+  let query =`
+    DELETE FROM review
+    WHERE id = $1
+  `
+  return db.none(query, [id])
+}
+
 module.exports = {
   create,
   readThreeNewest,
-  readReviewsById
+  readReviewsById,
+  deleteRecord
 }

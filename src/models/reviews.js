@@ -11,5 +11,6 @@ const UserReviews = (request) => {
 module.exports = {
   create: dbReviews.create,
   readThreeNewest: dbReviews.readThreeNewest,
-  UserReviews
+  UserReviews,
+  deleteRecord: dbReviews.deleteRecord
 }

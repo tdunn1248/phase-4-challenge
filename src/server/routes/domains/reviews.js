@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const Album = require('../../../models/albums')
 const Review = require('../../../models/reviews')
 const {validateReviewForm} = require('../route_helpers/validation')
 
@@ -9,9 +8,7 @@ router.post('/:id', validateReviewForm, (request, response) => {
     request.session.id,
     request.params.id
   )
-  .then(() => {
-    response.redirect('/albums/' + request.params.id)
-  })
+  .then(() => {response.redirect('/albums/' + request.params.id)})
 })
 
 module.exports = router

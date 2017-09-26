@@ -8,8 +8,7 @@ const {profileView} = require('../route_helpers/view')
 router.route('/sign-up')
       .get((request, response) => {response.status(200).render('users/sign-up')})
       .post(validateSignupForm, (request, response, next) => {
-        User.signup(request.body)
-        .then(newUser => {
+        User.signup(request.body).then(newUser => {
           assignNewUserSession(request, newUser)
           response.redirect('/users/' + newUser.id)
         })

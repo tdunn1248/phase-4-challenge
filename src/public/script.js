@@ -1,6 +1,6 @@
 console.log('hello from the browser JavaScript')
 
-const handleEvent = ( event) => {
+const handleEvent = (event) => {
   event.target.parentNode.parentNode.remove()
 }
 

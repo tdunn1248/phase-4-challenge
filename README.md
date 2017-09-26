@@ -26,6 +26,5 @@ src/
 
 Use the following commands to set up and seed your database:
 
-1. Create PostgreSQL database `vinyl`: `$ npm run db:create`
-1. Set up database tables from `schema.sql`: `$ npm run db:schema`
-1. Load seed data from `albums.sql`: `$ npm run db:seed`
+1. Place a Postgres connection string in your .env file to connect to a local database
+1. The ```npm run db:init ``` command creates a database called vinyl, sets up the schema, and inserts seed data into the newly created database.

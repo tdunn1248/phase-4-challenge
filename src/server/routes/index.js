@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const {indexView} = require('./route_helpers/view')
-const {AlbumsAndNewestReviews} = require('./route_helpers/helper')
+const {AlbumsAndNewestReviews} = require('./route_helpers/album-review-helpers')
 
 router.get('/', (request, response, next) => {
     AlbumsAndNewestReviews()

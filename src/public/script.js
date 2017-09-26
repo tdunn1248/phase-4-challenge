@@ -1,14 +1,6 @@
 console.log('hello from the browser JavaScript')
 
 const handleResponse = (response, event) => {
-  if (response.status === 403) {
-    return response.json().then(message => {
-      document.getElementById('error').append(message.error)
-    })
-  }
-  if (!response.redirected) {
-    return document.getElementById('error').append('Must be logged in to delete reviews')
-  }
   event.target.parentNode.parentNode.remove()
 }
 

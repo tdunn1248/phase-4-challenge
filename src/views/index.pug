@@ -12,7 +12,7 @@ include ./partials/head
           p by: #{album.artist}
     .index-recent-reviews-contain
       h1 Recent Reviews
-      if (view)
+      if (view.reviews.length > 0)
         each review in view.reviews 
           .single-review
             .title-and-time
@@ -23,8 +23,8 @@ include ./partials/head
             a(href='/users/' + review.review_user_id)
               p.index-review-name by: #{review.name}
       else 
-        h2 Sorry, no recent posts yet...
-        h4 Click on a title to submit a review
+        h4 Sorry, no recent posts yet...
+        h5 Click on a title to submit a review
 
 
 

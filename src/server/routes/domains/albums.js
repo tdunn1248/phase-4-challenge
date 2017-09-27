@@ -5,7 +5,7 @@ const {checkUserSession} = require('../route_helpers/session/check-user-session'
 
 router.get('/:id', (request, response) => {
   Album.infoAndReviews(request.params.id)
-  .then(albumInfo => {response.status(200).render('albums/album', {view: albumView(request, albumInfo)})})
+  .then(infoAndReviews => {response.status(200).render('albums/album', {view: albumView(request, infoAndReviews)})})
 })
 
 router.get('/:id/reviews/new', checkUserSession, (request, response) => {

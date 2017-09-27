@@ -23,6 +23,10 @@ header h1 {
   margin-left: 2em;
 }
 
+header h1:hover {
+  color: blue;
+}
+
 h6 {
   margin-left: 2em;
 }

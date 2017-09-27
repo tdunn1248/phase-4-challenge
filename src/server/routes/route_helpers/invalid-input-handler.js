@@ -32,6 +32,7 @@ module.exports = {
         response.render('users/login', {error: error.message})
         break
       case ('Review must have content') :
+        console.log('here??');
         Album.readById(parseInt(request.path.slice(9)))
         .then(albumInfo => {
           response.status(200).render('reviews/new-review', {

@@ -7,8 +7,6 @@ module.exports = {
       case ('User must be logged in to post content') :
         response.status(302).render('users/login', {error: error.message})
         break
-      default:
-      response.render('not_found.pug', {error})
     }
   }
 }

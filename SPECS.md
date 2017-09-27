@@ -133,7 +133,7 @@ Users can:
 
 Users CANNOT:
 
-- [ ] __20:__ Perform any actions that require a user to be signed in after signing out.
+- [X] __20:__ Perform any actions that require a user to be signed in after signing out.
 
 ## User Profile
 
@@ -150,9 +150,9 @@ Users can:
 - [X] __20:__ View their name, email, and join date.
 - [X] __20:__ View only their submitted reviews sorted by newest first.
 - [X] __20:__ View "trash can" delete icons only next to reviews submitted by users.
-- [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the delete icon next to a review.
-- [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
-- [ ] __20:__ Have the review deleted from the database and removed from the user profile page after clicking Confirm.
+- [X] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the delete icon next to a review.
+- [X] __20:__ Have the pop-up dismissed after clicking Cancel.
+- [X] __20:__ Have the review deleted from the database and removed from the user profile page after clicking Confirm.
 
 Layout:
 
@@ -172,18 +172,18 @@ Routing:
 Users can:
 
 - [X] __20:__ View the name of the album on the album page.
-- [ ] __20:__ View all reviews for the album on album page sorted by newest first.
-- [ ] __20:__ View "trash can" delete icons next to reviews the user can delete.
-- [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the trash can icon next to a review.
-- [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
-- [ ] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
+- [X] __20:__ View all reviews for the album on album page sorted by newest first.
+- [X] __20:__ View "trash can" delete icons next to reviews the user can delete.
+- [X] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the trash can icon next to a review.
+- [X] __20:__ Have the pop-up dismissed after clicking Cancel.
+- [X] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
 - [X] __20:__ View a button with the label "Add Review".
 - [X] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
 
 Users CANNOT:
 
-- [ ] __20:__ Delete a review when not logged in.
-- [ ] __20:__ Delete another user's review.
+- [X] __20:__ Delete a review when not logged in.
+- [X] __20:__ Delete another user's review.
 
 Layout:
 
@@ -198,17 +198,17 @@ Displays a form that allows users to submit album reviews.
 
 Routing:
 
-- [ ] __20:__ Navigating to `/albums/<ALBUM ID>/reviews/new` loads the new review page.
+- [X] __20:__ Navigating to `/albums/<ALBUM ID>/reviews/new` loads the new review page.
 
 Users can:
 
 - [X] __20:__ Enter multi-line text in the text field.
 - [X] __20:__ Click the Submit button to submit the review.
-- [ ] __20:__ Be redirected to the album page (e.g. `/albums/<ALBUM ID>`) after submitting the review.
+- [X] __20:__ Be redirected to the album page (e.g. `/albums/<ALBUM ID>`) after submitting the review.
 
 Users CANNOT:
 
-- [ ] __20:__ Submit a review when not logged in.
+- [X] __20:__ Submit a review when not logged in.
 - [X] __20:__ Submit an empty review.
 
 Layout:
